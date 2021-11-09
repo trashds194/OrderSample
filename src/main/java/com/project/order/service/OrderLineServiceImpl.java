@@ -3,9 +3,11 @@ package com.project.order.service;
 import com.project.order.dao.OrderLine;
 import com.project.order.repository.OrderLineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class OrderLineServiceImpl implements OrderLineService {
 
     @Autowired

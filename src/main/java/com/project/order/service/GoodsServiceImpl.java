@@ -3,9 +3,11 @@ package com.project.order.service;
 import com.project.order.dao.Goods;
 import com.project.order.repository.GoodsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class GoodsServiceImpl implements GoodsService {
 
     @Autowired
