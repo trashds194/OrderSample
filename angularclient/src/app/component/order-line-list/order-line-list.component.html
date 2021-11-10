@@ -1,0 +1,29 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Client</th>
+        <th scope="col">Date</th>
+        <th scope="col">Address</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Count</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let oneOrder of orderLine">
+        <td>{{ oneOrder.id }}</td>
+        <td>{{ oneOrder.order}}</td>
+        <td>{{ oneOrder.goods }}</td>
+<!--        <td>{{ oneOrder.order?.address }}</td>-->
+<!--        <td>{{ oneOrder.goods?.name }}</td>-->
+<!--        <td>{{ oneOrder.goods?.price }}</td>-->
+        <td>{{ oneOrder.count }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

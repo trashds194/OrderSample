@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class OrderController {
 
     private final OrderService orderService;
@@ -31,7 +32,7 @@ public class OrderController {
         final List<Order> orderList = orderService.readAll();
 
         return orderList != null
-                ? new ResponseEntity<>(HttpStatus.OK)
+                ? new ResponseEntity<>(orderList, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 

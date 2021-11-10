@@ -1,13 +1,15 @@
-DROP TABLE IF EXISTS "order_line";
+DROP TABLE IF EXISTS "ORDER_LINE";
 
-CREATE TABLE "order_line"
+CREATE TABLE "ORDER_LINE"
 (
     id         INT AUTO_INCREMENT PRIMARY KEY,
-    "order_id" INT NOT NULL,
-    "goods_id" INT NOT NULL,
+    "ORDER_ID" INT NOT NULL,
+    "GOODS_ID" INT NOT NULL,
     count      INT NOT NULL
 );
 
-INSERT INTO "order_line" ("order_id", "goods_id", count)
-VALUES (2, 1, 1),
-       (3, 2, 2);
+CREATE SEQUENCE IF NOT EXISTS orderLine_id_seq START WITH 3 INCREMENT BY 1;
+
+INSERT INTO "ORDER_LINE" ("ORDER_ID", "GOODS_ID", count)
+VALUES (1, 1, 1),
+       (2, 2, 2);

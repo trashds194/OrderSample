@@ -1,12 +1,14 @@
-DROP TABLE IF EXISTS "goods";
+DROP TABLE IF EXISTS "GOODS";
 
-CREATE TABLE "goods"
+CREATE TABLE "GOODS"
 (
     id    INT AUTO_INCREMENT PRIMARY KEY,
     name  VARCHAR(100) NOT NULL,
     price DOUBLE       NOT NULL
 );
 
-INSERT INTO "goods" (name, price)
+CREATE SEQUENCE IF NOT EXISTS goods_id_seq START WITH 3 INCREMENT BY 1;
+
+INSERT INTO "GOODS" (name, price)
 VALUES ('Eggs', 100.0),
        ('Bread', 35.00);

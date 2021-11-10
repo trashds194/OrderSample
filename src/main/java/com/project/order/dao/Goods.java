@@ -1,13 +1,17 @@
 package com.project.order.dao;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "goods")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Goods {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "goodsIdSeq", sequenceName = "goods_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "goodsIdSeq")
     @Column(name = "id", nullable = false)
     private int id;
 
