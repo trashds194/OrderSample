@@ -10,13 +10,16 @@ import {GoodsFormComponent} from './component/goods-form/goods-form.component';
 import {GoodsService} from "./service/goods.service";
 import { OrderLineListComponent } from './component/order-line-list/order-line-list.component';
 import {OrderLineService} from "./service/order-line.service";
+import { OrderFormComponent } from './component/order-form/order-form.component';
+import {OrderService} from "./service/order.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     GoodsListComponent,
     GoodsFormComponent,
-    OrderLineListComponent
+    OrderLineListComponent,
+    OrderFormComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import {OrderLineService} from "./service/order-line.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [GoodsService, OrderLineService],
+  providers: [GoodsService, OrderLineService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

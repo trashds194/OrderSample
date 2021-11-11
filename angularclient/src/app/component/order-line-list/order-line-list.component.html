@@ -15,11 +15,11 @@
       <tbody>
       <tr *ngFor="let oneOrder of orderLine">
         <td>{{ oneOrder.id }}</td>
-        <td>{{ oneOrder.order}}</td>
-        <td>{{ oneOrder.goods }}</td>
-<!--        <td>{{ oneOrder.order?.address }}</td>-->
-<!--        <td>{{ oneOrder.goods?.name }}</td>-->
-<!--        <td>{{ oneOrder.goods?.price }}</td>-->
+        <td>{{ oneOrder.order['client']}}</td>
+        <td>{{ oneOrder.order['date']}}</td>
+        <td>{{ oneOrder.order['address']}}</td>
+        <td>{{ oneOrder.goods['name']}}</td>
+        <td>{{ oneOrder.goods['price']}}</td>
         <td>{{ oneOrder.count }}</td>
       </tr>
       </tbody>

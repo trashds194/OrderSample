@@ -36,6 +36,15 @@ public class OrderController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping(value = "/api/orders/last")
+    public ResponseEntity<?> readLast() {
+        final Order order = orderService.readLast();
+
+        return order != null
+                ? new ResponseEntity<>(order, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
     @GetMapping(value = "/api/orders/{id}")
     public ResponseEntity<?> read(@PathVariable(name = "id") int id) {
         final Order order = orderService.read(id);

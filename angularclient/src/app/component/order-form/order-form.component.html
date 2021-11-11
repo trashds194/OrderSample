@@ -1,0 +1,58 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #orderForm="ngForm">
+      <div class="form-group">
+        <label for="client">Client</label>
+        <input type="text" [(ngModel)]="order.client"
+               class="form-control"
+               id="client"
+               name="client"
+               placeholder="Enter Client name"
+               required #client="ngModel">
+      </div>
+      <div [hidden]="!client.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="text" [(ngModel)]="order.date"
+               class="form-control"
+               id="date"
+               name="date"
+               placeholder="Enter order Date"
+               required #date="ngModel">
+        <div [hidden]="!date.pristine" class="alert alert-danger">Price is required</div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" [(ngModel)]="order.address"
+               class="form-control"
+               id="address"
+               name="address"
+               placeholder="Enter Client address"
+               required #address="ngModel">
+        <div [hidden]="!address.pristine" class="alert alert-danger">Address is required</div>
+      </div>
+      <div class="form-group">
+        <label for="goods">Choose goods</label>
+        <p></p>
+        <select id="goods" [(ngModel)]="good" [ngModelOptions]="{standalone: true}" (ngModelChange)="selectOption($event)">
+          <option *ngFor="let good of goods" [ngValue]="good">{{good.name}} | {{good.price}}</option>
+        </select>
+        <p></p>
+      </div>
+      <div class="form-group">
+        <label for="count">Count</label>
+        <input type="text" [(ngModel)]="orderLine.count"
+               class="form-control"
+               id="count"
+               name="count"
+               placeholder="Enter Goods count"
+               required #count="ngModel">
+        <div [hidden]="!count.pristine" class="alert alert-danger">Couny is required</div>
+      </div>
+
+      <button type="submit" [disabled]="!orderForm.form.valid"
+              class="btn btn-info">Submit
+      </button>
+    </form>
+  </div>
+</div>

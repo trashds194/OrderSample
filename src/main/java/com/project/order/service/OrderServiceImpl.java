@@ -25,6 +25,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Order readLast() {
+        return orderRepository.findTopByOrderByIdDesc();
+    }
+
+    @Override
     public Order read(int id) {
         return orderRepository.getById(id);
     }

@@ -9,6 +9,8 @@ public interface OrderService {
 
     List<Order> readAll();
 
+    Order readLast();
+
     Order read(int id);
 
     boolean update(Order order, int id);

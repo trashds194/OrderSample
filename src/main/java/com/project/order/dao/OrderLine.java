@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class OrderLine {
 
     @Id
-    @SequenceGenerator(name = "orderLineIdSeq", sequenceName = "orderLine_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "orderLineIdSeq", sequenceName = "order_line_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "orderLineIdSeq")
     @Column(name = "id")
     private int id;

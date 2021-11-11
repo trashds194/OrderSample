@@ -17,7 +17,7 @@ export class OrderLineListComponent implements OnInit {
   ngOnInit(): void {
     this.orderLineService.findAll().subscribe(data => {
       this.orderLine = data;
-      console.log("Our member contains: " + this.orderLine);
+      console.log("Our member contains: ", this.orderLine);
     })
   }
 
