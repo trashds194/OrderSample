@@ -30,8 +30,7 @@ public class Goods {
     public Goods() {
     }
 
-    public Goods(int id, String name, double price) {
-        this.id = id;
+    public Goods(String name, double price) {
         this.name = name;
         this.price = price;
     }

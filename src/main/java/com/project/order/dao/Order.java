@@ -36,8 +36,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(int id, String client, Date date, String address) {
-        this.id = id;
+    public Order(String client, Date date, String address) {
         this.client = client;
         this.date = date;
         this.address = address;

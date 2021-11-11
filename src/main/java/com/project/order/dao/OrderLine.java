@@ -26,6 +26,15 @@ public class OrderLine {
     @Column(name = "count")
     private int count;
 
+    public OrderLine() {
+    }
+
+    public OrderLine(Order order, Goods goods, int count) {
+        this.order = order;
+        this.goods = goods;
+        this.count = count;
+    }
+
     public int getId() {
         return id;
     }
