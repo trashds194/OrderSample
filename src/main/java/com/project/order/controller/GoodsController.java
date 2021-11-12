@@ -45,7 +45,7 @@ public class GoodsController {
     }
 
     @PutMapping(value = "/api/goods/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") int id, Goods goods) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody Goods goods) {
         final boolean updated = goodsService.update(goods, id);
 
         return updated

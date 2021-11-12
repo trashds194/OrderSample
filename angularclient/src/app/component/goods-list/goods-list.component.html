@@ -6,6 +6,8 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Price</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
       </tr>
       </thead>
       <tbody>
@@ -13,6 +15,12 @@
         <td>{{ good.id }}</td>
         <td>{{ good.name }}</td>
         <td>{{ good.price }}</td>
+        <td>
+          <button (click)="onUpdClick($event)" [value]="good.id">Upd</button>
+        </td>
+        <td>
+          <button (click)="onDelClick($event)" [value]="good.id">Del</button>
+        </td>
       </tr>
       </tbody>
     </table>

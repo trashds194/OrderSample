@@ -55,7 +55,7 @@ public class OrderController {
     }
 
     @PutMapping(value = "/api/orders/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") int id, Order order) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody Order order) {
         final boolean updated = orderService.update(order, id);
 
         return updated

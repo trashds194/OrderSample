@@ -15,6 +15,14 @@ export class OrderLineListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.listUpdate();
+  }
+
+  onDelClick(event: any) {
+    this.orderLineService.delete(event.target.value).subscribe(result => this.listUpdate());
+  }
+
+  listUpdate() {
     this.orderLineService.findAll().subscribe(data => {
       this.orderLine = data;
       console.log("Our member contains: ", this.orderLine);

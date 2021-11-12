@@ -46,7 +46,7 @@ public class OrderLineController {
     }
 
     @PutMapping(value = "/api/order-lines/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") int id, OrderLine orderLine) {
+    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody OrderLine orderLine) {
         final boolean updated = orderLineService.update(orderLine, id);
 
         return updated

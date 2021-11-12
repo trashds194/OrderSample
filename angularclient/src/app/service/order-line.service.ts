@@ -9,9 +9,10 @@ import {Observable} from "rxjs";
 export class OrderLineService {
 
   private readonly orderLineUrl: string;
+  endPoint!: number;
 
   constructor(private http: HttpClient) {
-    this.orderLineUrl = 'http://localhost:8080/api/order-lines'
+    this.orderLineUrl = 'http://localhost:8080/api/order-lines/'
   }
 
   public findAll(): Observable<OrderLine[]> {
@@ -20,5 +21,10 @@ export class OrderLineService {
 
   public save(orderLine: OrderLine) {
     return this.http.post<OrderLine>(this.orderLineUrl, orderLine);
+  }
+
+  public delete(id: any) {
+    this.endPoint = id;
+    return this.http.delete(this.orderLineUrl + this.endPoint);
   }
 }

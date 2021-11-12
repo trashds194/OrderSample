@@ -1,5 +1,5 @@
 export class Goods {
-  id: number | undefined;
-  name: string | undefined;
-  price: number | undefined;
+  id!: number;
+  name!: string;
+  price!: number;
 }

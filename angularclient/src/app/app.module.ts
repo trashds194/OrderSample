@@ -8,10 +8,11 @@ import {AppComponent} from './app.component';
 import {GoodsListComponent} from './component/goods-list/goods-list.component';
 import {GoodsFormComponent} from './component/goods-form/goods-form.component';
 import {GoodsService} from "./service/goods.service";
-import { OrderLineListComponent } from './component/order-line-list/order-line-list.component';
+import {OrderLineListComponent} from './component/order-line-list/order-line-list.component';
 import {OrderLineService} from "./service/order-line.service";
-import { OrderFormComponent } from './component/order-form/order-form.component';
+import {OrderFormComponent} from './component/order-form/order-form.component';
 import {OrderService} from "./service/order.service";
+import {GoodsUpdFormComponent} from './component/goods-upd-form/goods-upd-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {OrderService} from "./service/order.service";
     GoodsListComponent,
     GoodsFormComponent,
     OrderLineListComponent,
-    OrderFormComponent
+    OrderFormComponent,
+    GoodsUpdFormComponent
   ],
   imports: [
     BrowserModule,

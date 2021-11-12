@@ -10,6 +10,7 @@
         <th scope="col">Name</th>
         <th scope="col">Price</th>
         <th scope="col">Count</th>
+        <th scope="col">Del</th>
       </tr>
       </thead>
       <tbody>
@@ -21,6 +22,9 @@
         <td>{{ oneOrder.goods['name']}}</td>
         <td>{{ oneOrder.goods['price']}}</td>
         <td>{{ oneOrder.count }}</td>
+        <td>
+          <button (click)="onDelClick($event)" [value]="oneOrder.id">Del</button>
+        </td>
       </tr>
       </tbody>
     </table>

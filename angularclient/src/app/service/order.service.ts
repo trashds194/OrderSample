@@ -11,7 +11,7 @@ export class OrderService {
   private readonly orderUrl: string;
 
   constructor(private http: HttpClient) {
-    this.orderUrl = 'http://localhost:8080/api/orders';
+    this.orderUrl = 'http://localhost:8080/api/orders/';
   }
 
   public findAll(): Observable<Order[]> {
@@ -19,7 +19,7 @@ export class OrderService {
   }
 
   public findLast(): Observable<Order>{
-    return this.http.get<Order>(this.orderUrl + '/last');
+    return this.http.get<Order>(this.orderUrl + 'last');
   }
 
   public save(order: Order) {

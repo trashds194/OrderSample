@@ -20,6 +20,7 @@ export class GoodsFormComponent implements OnInit {
 
   onSubmit() {
     this.goodsService.save(this.goods).subscribe(result => this.gotoGoodsList());
+    console.log(this.goods);
   }
 
   gotoGoodsList() {
