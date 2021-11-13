@@ -13,6 +13,7 @@ import {OrderLineService} from "./service/order-line.service";
 import {OrderFormComponent} from './component/order-form/order-form.component';
 import {OrderService} from "./service/order.service";
 import {GoodsUpdFormComponent} from './component/goods-upd-form/goods-upd-form.component';
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {GoodsUpdFormComponent} from './component/goods-upd-form/goods-upd-form.c
     HttpClientModule,
     FormsModule
   ],
-  providers: [GoodsService, OrderLineService, OrderService],
+  providers: [GoodsService, OrderLineService, OrderService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -39,7 +39,7 @@ export class OrderFormComponent implements OnInit {
       console.log("ID: ", this.order);
       this.orderLine = new OrderLine(this.order, this.good, this.orderLine.count)
       console.log(this.orderLine);
-      this.orderLineService.save(this.orderLine).subscribe(result => this.gotoGoodsList())
+      this.orderLineService.save(this.orderLine).subscribe(result => this.gotoOrdersList())
     });
   }
 
@@ -54,7 +54,7 @@ export class OrderFormComponent implements OnInit {
     console.log("Good ", this.good);
   }
 
-  gotoGoodsList() {
+  gotoOrdersList() {
     this.router.navigate(['/orders']);
   }
 }

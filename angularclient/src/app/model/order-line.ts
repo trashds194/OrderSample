@@ -2,7 +2,7 @@ import {Goods} from "./goods";
 import {Order} from "./order";
 
 export class OrderLine {
-  id: number | undefined;
+  id!: number;
   order: Order;
   goods: Goods;
   count: number;

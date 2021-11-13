@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderLine} from "../../model/order-line";
 import {OrderLineService} from "../../service/order-line.service";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-order-line-list',
@@ -11,7 +12,8 @@ export class OrderLineListComponent implements OnInit {
 
   orderLine!: OrderLine[];
 
-  constructor(private orderLineService: OrderLineService) {
+  constructor(private orderLineService: OrderLineService,
+  public date: DatePipe) {
   }
 
   ngOnInit(): void {
@@ -25,6 +27,10 @@ export class OrderLineListComponent implements OnInit {
   listUpdate() {
     this.orderLineService.findAll().subscribe(data => {
       this.orderLine = data;
+      for(let oneOrder of this.orderLine){
+        oneOrder.order.date = this.date.transform(oneOrder.order.date, 'dd-MM-yyyy');
+        console.log(oneOrder.order.date);
+      }
       console.log("Our member contains: ", this.orderLine);
     })
   }
